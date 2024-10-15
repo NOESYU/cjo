@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font-family: "Roboto", sans-serif; */
+/* font-family: "IBM Plex Sans KR", sans-serif; */
+
+html, body{
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+.header{
+  width: 90%;
+  max-width: 1400px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav{
+  display: flex;
+  align-items: center;
+}
+.logo>a{
+  display: block;
+}
+.logo>a>img{
+  width: 5vw;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+.menu>li{
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.menu>li>a{
+  display: flex;
+  margin-right: 30px;
+  font-size: 1vw;
+  font-weight: 500;
+  align-items: center;
+}
+.menu>li:last-child>a::after{
+  content: "";
+  width: 0.8vw;
+  height: 0.8vw;
+  background: url(../imgs/ico_new_window.svg) no-repeat center center;
+  margin-left: 5px;
+  background-size: 100%;
+}
+.sub_bg{
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  border-top: 2px solid #f2f2f2;
+  box-shadow: 0px 5px 7px rgba(220, 220, 220, 0.5);
+  background-color: #fff;
+  z-index: 3;
+}
+.submenu{
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  padding: 25px 0;  
+}
+.submenu>li>a{
+  display: block;
+  text-align: center;
+  padding: 1vw;
+}
+.submenu>li>a img{
+  width: 100%;
+}
+.submenu>li>a p{
+  font-size: 0.8vw;
+}
+.submenu>li>a:hover p{
+  text-decoration: underline;
+}
+
+.family{
+  position: relative;
+}
+.fam_btn{
+  width: 10vw;
+  font-size: 0.8vw;
+  line-height: 220%;
+  text-align: left;
+  background: none;
+  background: url(../imgs/bg_underline.png) no-repeat left bottom;
+  background-size: 100%;
+  /* after 요소 보여주려고 본체에다가 display 변경 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fam_btn::after{
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url(../imgs/ico_family_arrow.svg) no-repeat center center;
+  background-size: 60%;
+}
+.fam_list{
+  position: absolute;
+  width: 100%;
+  border: 2px solid #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 1.1vw 0.9vw;
+  font-size: 0.75vw;
+}
+.fam_list>li>a{
+  display: block;
+  line-height: 220%;
+}
+
+
+@media all and (max-width: 1024px){
+  .menu{
+    display: none;
+  }
+  .nav{
+    order: 2;
+  }
+  .family{
+    order: 3;
+  }
+  .mobile{
+    order: 1;
+  }
+  .m_btn{
+    width: 4vw;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  .m_btn>span{
+    width: 80%;
+    border-top: 2px solid #333;
+    margin: 0.5vw 0;
+  }
+  .m_btn>span:nth-child(2){
+    width: 60%;
+  }
+  .logo>a>img{
+    width: 8vw;
+  }
+  .fam_btn{
+    width: 14vw;
+    font-size: 1.5vw;
+  }
+  .fam_list{
+    font-size: 1.3vw;
+  }
+}
+
+@media all and (min-width: 1025px){
+  .mobile{
+    display: none;
+  }
+}
