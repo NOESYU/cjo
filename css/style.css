@@ -17,6 +17,12 @@ html, body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 0 5%;
+  z-index: 10;
 }
 .nav{
   display: flex;
@@ -116,13 +122,12 @@ html, body{
   box-sizing: border-box;
   margin-top: 15px;
   padding: 1.1vw 0.9vw;
-  font-size: 0.75vw;
 }
 .fam_list>li>a{
   display: block;
+  font-size: 0.75vw;
   line-height: 220%;
 }
-
 
 @media all and (max-width: 1024px){
   .menu{
@@ -161,8 +166,156 @@ html, body{
     width: 14vw;
     font-size: 1.5vw;
   }
-  .fam_list{
+  .fam_list>li>a{
     font-size: 1.3vw;
+  }
+  .m_nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100vh;
+  }
+  .m_nav_bg{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .m_menu_box{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 45vw;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30vw 7vw;
+  }
+  .m_close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  .m_close>img{
+    width: 30px;
+    cursor: pointer;
+  }
+  .m_menu{
+    margin-bottom: 50px;
+  }
+  .m_menu>li>a{
+    display: block;
+    font-size: 4.5vw;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  .m_menu>li:last-child{
+    margin-top: 15px;
+  }
+  .m_menu>li:last-child>a{
+    display: block;
+    font-size: 2vw;
+    font-weight: 400; 
+  }
+  .m_menu>li:last-child>a>span{
+    text-decoration: underline;
+  }
+  .m_menu>li:last-child>a::after{
+    content: ">";
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  .sns{
+    display: flex;
+  }
+  .sns>li{
+    margin-right: 2vw;
+  }
+  .sns>li>a>img{
+    width: 3.5vw;
+  }
+  /* 모바일 햄버거 클릭시 효과
+    box width 크기만큼 왼쪽으로 이동 */
+  .m_menu_box{
+    margin-left: -45vw;
+    transition: all 0.3s;
+  }
+  .active{
+    margin-left: 0;
+  }
+  /* m_sub 메뉴 */
+  .m_sub_bg{
+    position: absolute;
+    background-color: #fff;
+    left: 2vw;
+    top: 10vw;
+    width: 70%;
+    height: 100%;
+    padding-left: 60px;
+  }
+  .m_sub_back{
+    width: 4vw;
+    cursor: pointer;
+  }
+  .m_sub{
+    margin-top: 10vh;
+  }
+  .m_sub::before{
+    display: block;
+    content: "브랜드";
+    font-size: 5vw;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .m_sub>li>a{
+    display: block;
+    font-size: 3vw;
+    line-height: 200%;
+  }
+}
+
+@media all and (max-width: 767px){
+  .m_btn{
+    width: 6vw;
+    height: 50px;
+  }
+  .m_btn>span{
+    margin: 1vw 0;
+  }
+  .logo>a>img{
+    width: 12vw;
+  }
+  .fam_btn{
+    width: 24vw;
+    font-size: 3vw;
+  }
+  .m_menu_box{
+    width: 70vw;
+  }
+  .m_menu{
+    margin-bottom: 15vw;
+  }
+  .m_menu>li>a{
+    font-size: 10vw;
+  }
+  .m_menu>li:last-child>a{
+    font-size: 4vw;
+  }
+  .sns>li>a>img{
+    width: 7vw;
+  }
+  /* 모바일 햄버거 클릭시 효과
+    box width 크기만큼 왼쪽으로 이동 */
+  .m_menu_box{
+    margin-left: -70vw;
+    transition: all 0.3s;
+  }
+  .m_sub_back{
+    width: 8vw;
+  }
+  .active{
+    margin-left: 0;
   }
 }
 
@@ -170,4 +323,41 @@ html, body{
   .mobile{
     display: none;
   }
+}
+
+
+.main{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #ddd; /* 크기확인용 */
+  padding-top: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main>h2{
+  font-family: "Roboto";
+  font-size: 7vw;
+  text-align: center;
+  margin: 6vh 0;
+}
+.main_slide{
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.main_slide>img{
+  width: 100%;
+}
+.main_slide::before{
+  content: "[";
+  margin-right: 2vw;
+  font-size: 3vw;
+}
+.main_slide::after{
+  content: "]";
+  margin-left: 2vw;
+  font-size: 3vw;
 }
