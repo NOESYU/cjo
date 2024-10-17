@@ -33,3 +33,16 @@ $(".m_menu>li").click(function(){
 $(".m_sub_back").click(function(){
   $(".m_sub_bg").fadeOut(100);
 })
+
+
+// main_slide 이미지
+$(".main_wrap>img:nth-child(1)~").hide();
+
+let i=0;
+function slide(){
+  i=i==6?0:i+1;
+  $(".main_wrap>img").eq(i).show();
+  $(".main_wrap>img").eq(i).siblings().hide();
+}
+
+setInterval(slide, 500);

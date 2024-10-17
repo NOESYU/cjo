@@ -9,20 +9,24 @@ html, body{
   font-weight: 500;
 }
 
+.header_wrap{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  
+  z-index: 10;
+}
 .header{
   width: 90%;
   max-width: 1400px;
   height: 100px;
   margin: 0 auto;
+  padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  padding: 0 5%;
-  z-index: 10;
 }
 .nav{
   display: flex;
@@ -266,7 +270,7 @@ html, body{
     content: "브랜드";
     font-size: 5vw;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .m_sub>li>a{
     display: block;
@@ -311,6 +315,18 @@ html, body{
     margin-left: -70vw;
     transition: all 0.3s;
   }
+  /* m_sub 메뉴 */
+  .m_sub_bg{
+    top: 10vw;
+    padding-left: 30px;
+  }
+  .m_sub::before{
+    font-size: 7vw;
+  }
+  .m_sub>li>a{
+    font-size: 6vw;
+    line-height: 180%;
+  }
   .m_sub_back{
     width: 8vw;
   }
@@ -329,7 +345,6 @@ html, body{
 .main{
   width: 100%;
   height: calc(100vh - 100px);
-  background-color: #ddd; /* 크기확인용 */
   padding-top: 100px;
   position: relative;
   display: flex;
@@ -341,23 +356,186 @@ html, body{
   font-family: "Roboto";
   font-size: 7vw;
   text-align: center;
-  margin: 6vh 0;
+  margin: 4vh 0;
 }
 .main_slide{
   width: 30%;
   display: flex;
   align-items: center;
 }
-.main_slide>img{
+.main_slide>.main_wrap{
+  width: calc(100% - 10vw);
+  position: relative; /* 이미지들 absolute 기준점 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42vh;
+}
+.main_wrap img{
   width: 100%;
+  position: absolute;
+  max-height: 120%;
 }
 .main_slide::before{
   content: "[";
-  margin-right: 2vw;
+  width: 5vw;
   font-size: 3vw;
 }
 .main_slide::after{
   content: "]";
-  margin-left: 2vw;
+  width: 5vw;
   font-size: 3vw;
+  display: block;
+  text-align: right;
+}
+
+
+.main_banner{
+  position: absolute;
+  left: 5vw;
+  bottom: 2vh;
+  z-index: 1;
+}
+.main_banner>a{
+  display: block;
+}
+.main_banner>a>p{
+  font-size: 0.9vw;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.main_banner>a>img{
+  position: relative;
+  width: 13vw;
+}
+.main_banner>img:nth-of-type(1){
+  position: absolute;
+  top: 0;
+  right: -1.5vw;
+  width: 3vw;
+}
+.main_banner>img:nth-of-type(2){
+  position: absolute;
+  top: 0;
+  right: -2.5vw;
+  width: 1.5vw;
+}
+.scr_btn{
+  position: absolute;
+  right: 5vw;
+  bottom: 2vh;
+  z-index: 1;
+  cursor: pointer;
+}
+.scr_btn>img:nth-child(1){
+  width: 4vw;
+}
+.scr_btn>img:nth-child(2){
+  width: 3vw;
+}
+
+
+@media all and (max-width: 1024px){
+  .main_slide>.main_wrap{
+    min-height: 24vh;
+  }
+  .main_slide{
+    width: 50%;
+  }
+  .main_slide::before{
+    font-size: 5vw;
+    margin-right: 50px;
+  }
+  .main_slide::after{
+    font-size: 5vw;
+    margin-left: 50px;
+  }
+  .main_banner>a>p{
+    font-size: 1.5vw;
+    font-weight: 500;
+  }
+  .main_banner>a>img{
+    width: 20vw;
+  }
+  .main_banner>img:nth-of-type(1){
+    right: -3vw;
+    width: 5vw;
+  }
+  .main_banner>img:nth-of-type(2){
+    right: -4vw;
+    width: 2.5vw;
+  }
+  .scr_btn>img:nth-child(1){
+    width: 6vw;
+  }
+  .scr_btn>img:nth-child(2){
+    width: 4vw;
+  }
+}
+
+@media all and (max-width: 920px){
+  .main>h2{
+    font-size: 16vw;
+  }
+  .main_slide{
+    width: 70%;
+  }
+  .main_slide>.main_wrap{
+    min-height: 32vh;
+  }
+}
+
+@media all and (max-width: 767px){
+  .main_banner{
+    left: 0;
+  }
+  .main_banner>a>p{
+    display: none;
+  }
+  .main_banner>a>img{
+    width: 40vw;
+  }
+  .main_banner>img:nth-of-type(1){
+    display: none;
+  }
+  .main_banner>img:nth-of-type(2){
+    display: none;
+  }
+  .scr_btn>img:nth-child(1){
+    width: 10vw;
+  }
+  .scr_btn>img:nth-child(2){
+    width: 7vw;
+  }
+}
+
+
+.contents{
+  width: 100%;
+  padding: 0 5vw;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+.conbox{
+  height: 17vw;
+  margin: 20px 0;
+  background-color: #ddd;
+}
+.conbox>a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0003;
+}
+.conbox>a>img{
+  width: 10%;
+  margin-left: 30px;
+}
+.con_title{
+  font-size: 2.2vw;
+  font-weight: 600;
+  color: #fff;
+  line-height: 150%;
 }
