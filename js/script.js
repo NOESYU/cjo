@@ -46,3 +46,38 @@ function slide(){
 }
 
 setInterval(slide, 500);
+
+
+// 스크롤 애니메이션
+AOS.init();
+
+let lastTop=0;
+$(window).scroll(function(){
+  let top=$(this).scrollTop();
+  // top>lastTop : 스크롤내림, top<lastTop : 스크롤올림 
+  if(top>lastTop){
+    // margin-top 을 header(100px)보다 큰 값을 줘서 이동
+    $(".header").css({"margin-top": "-105px"});
+  }
+  else{
+    $(".header").css({"margin-top": "0"});
+  }
+  lastTop=top;
+
+  if(top>100){
+    $(".main_title_top").css({
+      "padding-right":top, "transform":"scale(1.2)"
+    })
+    $(".main_title_bottom").css({
+      "padding-left":top, "transform":"scale(1.3)", "color":"#ddd"
+    })
+  }
+  else{
+    $(".main_title_top").css({
+      "padding-right":top, "transform":"scale(1)"
+    })
+    $(".main_title_bottom").css({
+      "padding-left":top, "transform":"scale(1)", "color":"#000"
+    })
+  }
+})

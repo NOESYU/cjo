@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>청정원 | 대상</title>
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/aos.js"></script>
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -156,7 +158,9 @@
     </h2>
 
     <!-- main 하단 배너, 버튼 -->
-    <div class="main_banner">
+    <!-- 스크롤안내려도 바로 aos 실행되게 data-aos-offset 시작될 객체 위치를 큰값으로 설정 -->
+    <div class="main_banner" data-aos="fade-right"
+          data-aos-duration="700" data-aos-once="true" data-aos-offset="100vh">
       <a href="#">
         <p>추석 선물세트 보러가기</p>
         <img src="imgs/catalogue202409.jpg" alt="">
@@ -164,7 +168,8 @@
       <img src="imgs/ico_FlotingCampaign_arrow.svg" alt="">
       <img src="imgs/ico_event_go.png" alt="">
     </div>
-    <div class="scr_btn">
+    <div class="scr_btn" data-aos="zoom-in-down"
+          data-aos-duration="1000" data-aos-once="true" data-aos-offset="100vh">
       <img src="imgs/text_scroll.png" alt="">
       <img src="imgs/ico_scroll.svg" alt="">
     </div>
@@ -172,69 +177,110 @@
 
   <section class="contents">
     <div class="conbox box1">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo1.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           정원아,<br>오늘도 부탁해
         </div>
       </a>
     </div>
     <div class="conbox box2">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo2.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           만족을,<br>요리하다
         </div>
       </a>
     </div>
     <div class="conbox box3">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo3.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           안주야를 만나는 순간,<br>모든것이 즐겁다.
         </div>
       </a>
     </div>
     <div class="conbox box4">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo4.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           맛있는,<br>발효숙성
         </div>
       </a>
     </div>
     <div class="conbox box5">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo5.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           여왕의 방식<br>프리미엄 카레
         </div>
       </a>
     </div>
     <div class="conbox box6">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo6.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           두 번 달여<br>더 진한 진간장
         </div>
       </a>
     </div>
     <div class="conbox box7">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo7.png" alt="">
-        <div class="con_title">
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
           나를 위한<br>건강한 일상음료
         </div>
       </a>
     </div>
     <div class="conbox box8">
+      <div class="box_bg" data-aos="zoom-out" data-aos-duration="1000"></div>
       <a href="#">
         <img src="imgs/chungjungone-logo8.png" alt="">
-        <div class="con_title">
-          맛있는<br>자연재료
+        <div class="con_title" data-aos="fade-left" data-aos-delay="500">
+          맛있는<br>자연재료 
         </div>
       </a>
     </div>
   </section>
+
+  <footer class="footer">
+    <ul class="f_menu">
+      <li>
+        <a href="#">개인정보처리방침</a>
+        <!-- <img src="imgs/ico_new_window.svg" alt=""> --> <!-- 애프터로 추가 -->
+      </li>
+      <li><a href="#">이메일무단수집거부</a></li>
+      <li><a href="#">사이트맵</a></li>
+      <li><a href="#">
+        <img src="imgs/ccm.png" alt="">
+      </a></li>
+    </ul>
+    <div class="f_logo">
+      <a href="#"><img src="imgs/logo.svg" alt=""></a>
+    </div>
+    <div class="f_txt">
+      대상(주) <span>|</span> 사업자 등록번호:109-81-14886<br>
+      대표이사:임정배 <span>|</span> 주소:서울시 종로구 창경궁로 120(인의동)<br>
+      제품관련 고객상담:080-019-9119<br>
+      상담시간:평일 09:00~17:30 (토, 일요일, 공휴일 휴무)<br>
+      개인정보 보호책임자:윤한권
+    </div>
+    <ul class="f_sns">
+      <li><a href="#"><img src="imgs/ico_ft_facebook.svg" alt=""></a></li>
+      <li><a href="#"><img src="imgs/ico_ft_youtube.svg" alt=""></a></li>
+      <li><a href="#"><img src="imgs/ico_ft_blog.svg" alt=""></a></li>
+      <li><a href="#"><img src="imgs/ico_ft_instargram.svg" alt=""></a></li>
+    </ul>
+    <div class="copyright">
+      COPYRIGHT 청정원. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
 </body>
 </html>
