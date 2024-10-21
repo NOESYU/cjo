@@ -710,3 +710,64 @@ html, body{
 .copyright{
   font-size: 0.7vw;
 }
+
+
+@media all and (max-width: 1024px){
+  .footer{
+    padding: 40px 0 70px;
+  }
+  .f_menu>li>a{
+    font-size: 1.5vw;
+  }
+  .f_menu>li:last-child img{
+    width: 4vw;
+  }
+  .f_logo{
+    margin: 4vw 0 2vw;
+  }
+  .f_logo>a>img{
+    width: 10vw;
+  }
+  .f_txt{
+    font-size: 1.4vw;
+    line-height: 1.8;
+  }
+  .f_sns{
+    margin: 1.8vw 0 2.4vw;
+  }
+  .f_sns>li>a>img{
+    width: 3vw;
+  }
+  .copyright{
+    font-size: 1.4vw;
+  }
+}
+@media all and (max-width: 768px){
+  .f_menu>li>a{
+    font-size: 3vw;
+  }
+  .f_menu>li:nth-child(1)>a::after{
+    width: 3vw;
+    height: 3vw;
+  }
+  .f_menu>li:last-child img{
+    width: 6vw;
+  }
+  .f_logo>a>img{
+    width: 14vw;
+  }
+  .f_txt{
+    font-size: 3vw;
+    font-weight: 600;
+  }
+  .f_sns{
+    margin: 3vw 0;
+  }
+  .f_sns>li>a>img{
+    width: 6vw;
+  }
+  .copyright{
+    font-size: 3vw;
+    font-weight: 600;
+  }
+}
